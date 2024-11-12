@@ -1,0 +1,18 @@
+# render.yaml
+
+services:
+  - type: web
+    name: telegram-bot
+    env: python
+    region: us
+    buildCommand:
+      - pip install -r requirements.txt
+    startCommand: python3 main.py
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: true # Ensure this is set in the Render dashboard
+    secretFiles:
+      - path: ./credentials.json
+        name: google-credentials
+    pythonVersion: 3.10 # Use the Python version your bot is compatible with
