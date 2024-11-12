@@ -1,0 +1,28 @@
+# Environment variables
+.env
+
+.venv
+
+# Python cache files
+*.pyc
+*.pyo
+__pycache__/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# System files
+.DS_Store
+
+# IDE-specific
+.vscode/
+.idea/
+
+# Google credentials file
+credentials.json
