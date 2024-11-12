@@ -3,22 +3,19 @@ from handlers.start import start
 from handlers.language import language_selection
 from handlers.menu import menu
 from handlers.collect_details import collect_details, cancel
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
 # States for the conversation
 LANGUAGE, MENU, COLLECT_DETAILS = range(3)
 
-# Retrieve the bot token from the .env file
+# Telegram Bot Token from .env file
 TOKEN = os.getenv("BOT_TOKEN")
 
 def main():
-    if not TOKEN:
-        raise ValueError("Bot token not found. Please set BOT_TOKEN in your .env file.")
-
     application = ApplicationBuilder().token(TOKEN).build()
 
     # Define the conversation handler
